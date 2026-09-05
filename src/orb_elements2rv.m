@@ -19,9 +19,13 @@ function state = orb_elements2rv(elements, mu)
 %       fprintf('位置 (km): [%.3f, %.3f, %.3f]\n', state(1:3));
 %       fprintf('速度 (km/s): [%.6f, %.6f, %.6f]\n', state(4:6));
 
-    if nargin < 2
-        mu = 398600.4418;   % 地球引力常数 (km^3/s^2)
-    end
+    % 导入全局变量，保持参数一致性
+    global J_2 R_E R_E_m w_E mu
+
+    % 这里没有nargin这个变量吧？为什么要写这个？
+    % if nargin < 2
+    %     mu = 398600.4418;   % 地球引力常数 (km^3/s^2)
+    % end
 
     % 检查输入是否为 6 列
     if size(elements, 2) ~= 6
