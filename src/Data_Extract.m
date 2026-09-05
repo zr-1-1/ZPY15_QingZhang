@@ -1,8 +1,14 @@
+%% 初始化参数
 clc;
 clear;
 J_2 = 1.0827e-3;
 R_E = 6378.14;
-%% 
+%% 获取所有碎片初始轨道根数
+% 把connect依赖项添加到路径中
+projectRoot = pwd;
+addpath(genpath(fullfile(projectRoot, "src", 'atk_connect_matlab_dependence'))); % 加入当前项目的二级子目录
+% addpath(genpath(fullfile(projectRoot, "src")));
+%% 连接到atk
 conID = atkOpen();
 % 获取所有碎片初始轨道根数
 Debris_oe = zeros(345,6);
@@ -12,7 +18,8 @@ for i = 1:345
     Debris_rv = str2double(split(Debris_d))/1000;
     Debris_oe(i,:) = rv2coe(Debris_rv(1:3),Debris_rv(4:6));
 end
-atkclose(conID);
+% 关闭atk连接C
+atkClose(conID);
 
 %% 按照一定步长生成24小时内碎片每个时刻的轨道根数
 t_step = 1;
