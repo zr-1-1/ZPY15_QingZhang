@@ -5,6 +5,8 @@
 ```text
 ZPY15_QingZhang/
 ├── ZPY15.xml                         # ATK 仿真场景文件
+├── EGM96.grv                         # 重力场系数文件 EGM96，见赛题说明，位于"ATK-ZPY15专用版\AstroData\Earth\EGM96.grv"
+├── docs/                             # 文档目录
 └── src/
     ├── Data_Extract.m                # 碎片轨道数据提取与计算脚本
     ├── OE_scl_ptb.m                  # J2 摄动下的轨道根数计算
@@ -16,6 +18,8 @@ ZPY15_QingZhang/
 
 # 注意事项
 1. 修改代码请先拉取远程仓库最新代码，避免冲突
+2. .gitignore 文件用于忽略不需要上传的文件，如有需要请自行加入你不想上传的文件
+3. 所有有单位变量注意单位，最好统一采用国际单位制，采用弧度制
 
 # 常用命令
 ```bash
