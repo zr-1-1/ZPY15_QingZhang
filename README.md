@@ -68,3 +68,11 @@ git branch <分支名>	        # 创建一个新分支
 git checkout <分支名>	    # 切换到指定分支
 git switch <分支名>         # 切换到指定分支（一样，更推荐）
 ```
+
+# 修改日志
+`main`
+```text
+09.07 在Data_Extract_vsl中修正无法连接ATK问题，删除轨道根数递推并加入参数可视化用于确定遍历范围
+      连不上ATK原因：添加子文件夹的文件路径出错，第一句多了"src"和genpath，第二句多src和fullfile。
+
+```
