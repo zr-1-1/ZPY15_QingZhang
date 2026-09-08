@@ -15,7 +15,7 @@ time_windows = [0,     8*3600; ...   % 08:00-16:00
                 6*3600,14*3600; ...   % 14:00-22:00
                 12*3600,20*3600; ...  % 20:00-04:00(+1)
                 16*3600,24*3600];     % 00:00(+1)-08:00(+1)
-window_use = 1;          % 全部四窗，若只调试可改为 1
+window_use = 2;          % 全部四窗，若只调试可改为 1
 
 % ------------------- 1. 定位并读取 ZPY15.xml -------------------
 xmlCand = { fullfile(pwd,'ZPY15.xml'), ...
@@ -173,6 +173,147 @@ fprintf('Level-2 完成，耗时 %.1f s，共 %d 个候选点\n', toc, size(pts_
     orbit_base{ww} = base;
     fprintf('时间窗%d完成：入库基元 %d 个 (>=%d)，最高清除 %d，总用时 %.1f s\n', ...
         wid, nbase, clear_thresh, max([base.clear_num]), toc);
+end
+   %% ===================== 4. 邻域微调（在最优基元周围精细搜索） =====================
+fprintf('\n===== 开始邻域微调（寻找更高清除数）=====\n');
+
+% ---- 4.1 找出当前最优基元 ----
+max_clear_all = 0;
+best_oe = [];
+for ww = 1:numel(orbit_base)
+    if ~isempty(orbit_base{ww})
+        for k = 1:numel(orbit_base{ww})
+            if orbit_base{ww}(k).clear_num > max_clear_all
+                max_clear_all = orbit_base{ww}(k).clear_num;
+                best_oe = orbit_base{ww}(k).oe0;
+                best_win = ww;
+                best_idx = k;
+            end
+        end
+    end
+end
+
+if isempty(best_oe)
+    fprintf('警告：没有找到任何基元，跳过微调\n');
+else
+    fprintf('当前最优：窗口%d，基元%d，清除 %d 颗\n', best_win, best_idx, max_clear_all);
+    fprintf('种子轨道: a=%.2f km, e=%.4f, i=%.3f°, RAAN=%.2f°, w=%.1f°, M=%.1f°\n', ...
+        best_oe(1)/1000, best_oe(2), best_oe(3)*180/pi, best_oe(4)*180/pi, ...
+        best_oe(5)*180/pi, best_oe(6)*180/pi);
+
+    % ---- 4.2 定义微调邻域范围 ----
+    % 每个维度的半宽度
+    refine_half = [50e3, 0.001, 0.5*pi/180, 0.5*pi/180, 0.5*pi/180, 5*pi/180];
+    % 微调步长（比 Level-2 更细）
+    refine_step = [10e3, 0.0002, 0.1*pi/180, 0.1*pi/180, 0.1*pi/180, 1*pi/180];
+
+    % ---- 4.3 生成邻域网格 ----
+    refine_grid = cell(1,6);
+    for dim = 1:6
+        lo = max(bounds(1,dim), best_oe(dim) - refine_half(dim));
+        hi = min(bounds(2,dim), best_oe(dim) + refine_half(dim));
+        if hi - lo < refine_step(dim)
+            refine_grid{dim} = linspace(lo, hi, 3);
+        else
+            refine_grid{dim} = lo : refine_step(dim) : hi;
+        end
+        if dim == 6 && refine_grid{dim}(end) < 2*pi
+            refine_grid{dim} = [refine_grid{dim}, 2*pi];
+        end
+    end
+
+    % 计算邻域网格点数
+    n_refine = cellfun(@numel, refine_grid);
+    fprintf('邻域网格规模: a=%d, e=%d, i=%d, RAAN=%d, w=%d, M=%d\n', ...
+        n_refine(1), n_refine(2), n_refine(3), n_refine(4), n_refine(5), n_refine(6));
+    total_refine = prod(n_refine);
+    fprintf('邻域总点数: %d\n', total_refine);
+
+    % ---- 4.4 生成并评估邻域网格 ----
+    [dR{1:6}] = ndgrid(refine_grid{:});
+    pts_refine = cell2mat(cellfun(@(x) x(:), dR, 'UniformOutput', false));
+
+    cnt_refine = zeros(size(pts_refine,1), 1);
+    fprintf('开始评估邻域网格点...\n');
+    tic;
+    parfor k = 1:size(pts_refine,1)
+        cnt_refine(k) = count_capture_vec(pts_refine(k,:), t_win, ...
+                                          pos_deb_all, vel_deb_all, ...
+                                          MU, RE, J2, d_thresh, v_thresh);
+    end
+    fprintf('邻域评估完成，耗时 %.1f s\n', toc);
+
+    % ---- 4.5 收集邻域中的高值点（清数 >= 当前最优，或至少 >= 入库阈值） ----
+    % 只保留比当前最优更高或等于的点（若等于则按碎片集合去重决定是否保留）
+    better_mask = cnt_refine > max_clear_all;
+    equal_mask = cnt_refine == max_clear_all & cnt_refine >= clear_thresh;
+    keep_mask = better_mask | equal_mask;
+    pts_new = pts_refine(keep_mask, :);
+    cnt_new = cnt_refine(keep_mask);
+
+    fprintf('邻域中找到 %d 个清除数 >= %d 的点\n', sum(keep_mask), max_clear_all);
+
+    if ~isempty(pts_new)
+        % ---- 4.6 将新点与已有基元合并去重 ----
+        all_existing = [];
+        for ww = 1:numel(orbit_base)
+            if ~isempty(orbit_base{ww})
+                for k = 1:numel(orbit_base{ww})
+                    all_existing = [all_existing; orbit_base{ww}(k).oe0];
+                end
+            end
+        end
+        all_pts_new = [all_existing; pts_new];
+        all_pts_new = unique(round(all_pts_new, 12), 'rows');
+
+        % ---- 4.7 重新精确入库（只处理新增的点） ----
+        % 为避免重复入库，只对 pts_new 中真正新的点进行处理
+        new_added = 0;
+        for k = 1:size(pts_new,1)
+            % 检查是否已存在（按碎片集合判重）
+            [cnt, cidx] = count_capture_vec_idx(pts_new(k,:), t_win, ...
+                                                pos_deb_all, vel_deb_all, ...
+                                                MU, RE, J2, d_thresh, v_thresh);
+            if cnt >= clear_thresh
+                % 检查碎片集合是否已存在
+                is_dup = false;
+                for ww = 1:numel(orbit_base)
+                    if ~isempty(orbit_base{ww})
+                        for j = 1:numel(orbit_base{ww})
+                            if isequal(sort(cidx), sort(orbit_base{ww}(j).clear_idx))
+                                is_dup = true;
+                                break;
+                            end
+                        end
+                    end
+                    if is_dup, break; end
+                end
+                if ~is_dup
+                    nbase = numel(orbit_base{best_win}) + 1;
+                    orbit_base{best_win}(nbase) = struct('oe0', pts_new(k,:), ...
+                                                         'clear_num', cnt, ...
+                                                         'clear_idx', cidx(:)');
+                    new_added = new_added + 1;
+                end
+            end
+        end
+        fprintf('邻域微调新增 %d 个基元\n', new_added);
+    else
+        fprintf('邻域中未发现新的高值点\n');
+    end
+
+    % ---- 4.8 重新统计最高清除数 ----
+    max_final = 0;
+    for ww = 1:numel(orbit_base)
+        if ~isempty(orbit_base{ww})
+            for k = 1:numel(orbit_base{ww})
+                if orbit_base{ww}(k).clear_num > max_final
+                    max_final = orbit_base{ww}(k).clear_num;
+                end
+            end
+        end
+    end
+    fprintf('邻域微调完成，最终最高清除数：%d 颗\n', max_final);
 end
 % ------------------- 3. 保存结果 -------------------
 save('orbit_base_database.mat', 'orbit_base', 'time_windows', 'window_use', ...
