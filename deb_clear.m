@@ -327,8 +327,13 @@ function oeT = j2sec_prop_v(oe0, tv, mu, RE, J2)
     oeT = [a + 0*tv; e + 0*tv; i + 0*tv; wrap2pi(OmT); wrap2pi(wT); wrap2pi(MT)];
 end
 
-% ---------- 计数函数（向量化） ----------
+% ---------- 计数函数（向量化，含 200km 高度约束） ----------
 function cnt = count_capture_vec(oe0, t_win, pos_deb_all, vel_deb_all, mu, RE, J2, d_thr, v_thr)
+% 统计母星沿 oe0 飞行时，在 t_win 内能清除的碎片数量
+% 同时检查母星是否始终高于 200 km，若违反则直接返回 0
+    oeT = j2sec_prop_v(oe0, t_win, mu, RE, J2);
+    [pos_c, vel_c] = oe2rv_v(oeT, mu);
+    pos_c = pos_c'; vel_c = vel_c';   % nt x 3
 % 仅返回清除数量，无碎片循环
     oeT = j2sec_prop_v(oe0, t_win, mu, RE, J2);
     [pos_c, vel_c] = oe2rv_v(oeT, mu);
