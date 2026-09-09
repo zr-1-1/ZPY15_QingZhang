@@ -44,7 +44,7 @@ load(fullfile(projectRoot,'data','data.mat'), 'Debris_oe');
 %% 直接读取从xml文件得到的数据
 debris_orbits = readtable(fullfile(projectRoot,'data','debris_orbits.csv'));
 % 可用debris_orbits(1,1)读取导入csv对应行列的数据
-% 第5列为历元，第7~12列为位置和速度三轴分量
+% 第5列为历元，第7~12列为位置和速度三轴分量(单位为m和m/s)
 load(fullfile(projectRoot,'data','debris_initial_state.mat'), 'debris_initial_state');
 
 %% 
