@@ -8,6 +8,7 @@ ZPY15_QingZhang/
 ├── EGM96.grv                         # 重力场系数文件 EGM96，见赛题说明，位于"ATK-ZPY15专用版\AstroData\Earth\EGM96.grv"
 ├── docs/                             # 文档目录
 └── src/
+    ├── export_debris_csv.py          # 将 XML 中碎片初始状态导出为 CSV（Python 标准库）
     ├── Data_Extract.m                # 碎片轨道数据提取与计算脚本
     ├── OE_scl_ptb.m                  # J2 摄动下的轨道根数计算
     ├── orb_elements2rv.m             # 轨道根数转位置、速度矢量
@@ -68,3 +69,25 @@ git branch <分支名>	        # 创建一个新分支
 git checkout <分支名>	    # 切换到指定分支
 git switch <分支名>         # 切换到指定分支（一样，更推荐）
 ```
+
+# 从xml文件直接导入数据
+1. 可以直接从xml文件直接读入其初始轨道参数，具体可见“<Satellite Name="Debris2" UiExpand="1">”类似字段下有如下数据：
+```xml
+<StartUTC>2030-11-14 08:00:00</StartUTC>
+<StopUTC>2030-11-15 08:00:00</StopUTC>
+<OrbEpoch>2030-11-14 08:00:00</OrbEpoch>
+<StepSize>60</StepSize>
+<PositionX>-1654510.742</PositionX>
+<PositionY>-2551988.329</PositionY>
+<PositionZ>-6763069.244</PositionZ>
+<VelocityX>1342.097126</VelocityX>
+<VelocityY>6593.96285</VelocityY>
+<VelocityZ>-2677.689633</VelocityZ>
+<GravityModel>7</GravityModel>
+<MaxDegree>20</MaxDegree>
+<MaxOrder>20</MaxOrder>
+<UseDrag>1</UseDrag>
+<UseFluxGeoFile>0</UseFluxGeoFile>
+<DragCoefficient>2.2</DragCoefficient>
+```
+同时Satellite字段末尾会有“</Satellite>”标示结束。

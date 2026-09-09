@@ -17,6 +17,7 @@ R_E = 6378.137; % 地球赤道平均半径，单位：km
 R_E_m = 6378137; % 地球赤道平均半径，单位：m
 w_E = 7.2921151467e-5; % 地球自转角速度，单位：rad/s
 mu = 3.986004418e14; % 地球引力常数，单位：(m^3)/(s^2)
+projectRoot = pwd;
 %% 获取所有碎片初始轨道根数
 % 把connect依赖项添加到路径中
 projectRoot = pwd;
@@ -39,7 +40,14 @@ save('data.mat', 'Debris_oe'); % 该变量不带对应时间信息，但是所�
 atkClose(conID);
 
 %% 按照一定步长生成24小时内碎片每个时刻的轨道根数
-load('data.mat', 'Debris_oe');
+load(fullfile(projectRoot,'data','data.mat'), 'Debris_oe');
+%% 直接读取从xml文件得到的数据
+debris_orbits = readtable(fullfile(projectRoot,'data','debris_orbits.csv'));
+% 可用debris_orbits(1,1)读取导入csv对应行列的数据
+% 第5列为历元，第7~12列为位置和速度三轴分量
+load(fullfile(projectRoot,'data','debris_initial_state.mat'), 'debris_initial_state');
+
+%% 
 t_step = 1; % 步长，单位：秒
 outercell = cell(1,345);
 for i = 1:345
