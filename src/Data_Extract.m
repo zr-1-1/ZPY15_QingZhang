@@ -32,10 +32,14 @@ for i = 1:345
     Debris_rv = str2double(split(Debris_d))/1000;
     Debris_oe(i,:) = rv2coe(Debris_rv(1:3),Debris_rv(4:6));
 end
+% 保存所有碎片初始轨道根数对应变量Debris_oe为静态文件，之后不用再从ATK导入
+save('data.mat', 'Debris_oe'); % 该变量不带对应时间信息，但是所有碎片初始轨道根数历元都为最初时刻2030-11-14 08:00:00.000(UTC)
+% 通过load('data.mat', 'Debris_oe');加载该变量到matlab工作区
 % 关闭atk连接C
 atkClose(conID);
 
 %% 按照一定步长生成24小时内碎片每个时刻的轨道根数
+load('data.mat', 'Debris_oe');
 t_step = 1; % 步长，单位：秒
 outercell = cell(1,345);
 for i = 1:345
