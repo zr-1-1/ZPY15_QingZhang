@@ -172,17 +172,41 @@ for oeIdx = 1:6
     oeAxes.XAxis.Exponent = 0;
 end
 
+%% 递推所有碎片轨道，并保存，方便后续导入
+Debris_oe = Debris_oe';
+t_step = 1; % 步长，单位：秒
+Tr_0 = 60*60*24;
+x_rv = zeros(6, 345, Tr_0/t_step + 1);
+x_rv(:,:,1) = Debris_rv;
+for i = 1:345
+    E_0 = Debris_oe(:,i);
+    for t = 1:t_step:Tr_0
+        E_t = OE_scl_ptb(E_0, t)';
+        [r_t,v_t] = orbit6toRV(E_t,mu);
+        x_rv(:,i,t+1) = [r_t;v_t];
+    end
+end
+save(fullfile(projectRoot,'data','x_rv.mat'), 'x_rv');
+
+%% 
+load(fullfile(projectRoot,'data','x_rv.mat'), 'x_rv');
+
 %% 网格搜索，先粗后细
 step = [10*1000 0.001 0.01*d2r 0.01*d2r 1*d2r 1*d2r]'; % 粗搜索间隔，单位为m和弧度
-range = [7000*1000 7443.24*1000
-         0.00001 0.0308333
-         98*d2r 98.1705*d2r
-         73.8298*d2r 77.6596*d2r
+range = [7000*1000 7450*1000
+         0.01 0.04
+         98*d2r 98.18*d2r
+         73*d2r 78*d2r
          345*d2r 445*d2r
          0 360*d2r
 ];
 target_min = 4;
 target_num = 8;
+num = zeros(6,1);
+for i=1:1:6
+    num(i,1) = (range(i,2)-range(i,1)/step(i))
+end
+
 
 
 %% 
@@ -207,7 +231,7 @@ D_Eall = cat(3,outercell{:});
 function [orbital_elements] = rv2orb_elements(r, v, mu)
 % r为初始位置矢量(列向量)，单位：m
 % v为初始速度矢量(列向量)，单位：m/s
-% miu为地球引力常数，单位：m^3/s^2
+% mu为地球引力常数，单位：m^3/s^2
 % 暂时未做圆轨道和赤道轨道的指定和兼容
 % 对当前碎片轨道根数转换影响不大
 
@@ -246,7 +270,7 @@ M = mod(M,2*pi); % 约束平近点角范围到[0, 2π)
 orbital_elements = [a;e;i;omega;w;M];
 end
 
-function [r,v] = orbit6toRV(orbit_elements, miu)
+function [r,v] = orbit6toRV(orbit_elements, mu)
 % 轨道六根数转地心惯性系下的速度位置矢量的函数
 a = orbit_elements(1);       % 半长轴(m)
 e = orbit_elements(2);       % 偏心率
@@ -270,7 +294,7 @@ u = w + theta; % 纬度幅角(rad)
 v0 = [-cos(omega)*(sin(u)+e*sin(w))-sin(omega)*(cos(u)+e*cos(w))*cos(i)
       -sin(omega)*(sin(u)+e*sin(w))+cos(omega)*(cos(u)+e*cos(w))*cos(i)
       (cos(u)+e*cos(w))*sin(i)]; % 速度在地心惯性系下的方向矢量（不是单位矢量）
-v = sqrt(miu/(a*(1-e^2))).*v0;   % 在地心惯性系下的速度矢量(m/s)
+v = sqrt(mu/(a*(1-e^2))).*v0;   % 在地心惯性系下的速度矢量(m/s)
 end
 
 function [x] = sat_sim(r0,v0,Tr,ts)
