@@ -19,6 +19,8 @@ R_E = 6378137; % 地球赤道平均半径，单位：m
 w_E = 7.2921151467e-5; % 地球自转角速度，单位：rad/s
 mu = 3.986004418e14; % 地球引力常数，单位：(m^3)/(s^2)
 projectRoot = pwd;
+addpath(genpath(fullfile(projectRoot, "src"))); % 把src及其所有子目录加入当前工作路径
+
 %% 获取所有碎片初始轨道根数
 % 把connect依赖项添加到路径中
 projectRoot = pwd;
@@ -69,7 +71,7 @@ Debris_oe = Debris_oe';
 % 只转换显示副本，Debris_oe 仍保持 m、rad，供后续计算使用。
 assert(size(Debris_oe,2) == 6 && ~isempty(Debris_oe) && ...
     isreal(Debris_oe) && all(isfinite(Debris_oe),'all'), ...
-    '轨道根数必须是非空、有限实数的 N×6 矩阵。');
+    '轨道根数必须是非空、有限实数的 Nx6 矩阵。');
 oeNames = ["a 半长轴"; "e 偏心率"; "i 倾角"; ...
     "Omega 升交点赤经"; "omega 近地点幅角"; "M 平近点角"];
 oeUnits = ["km"; "无量纲"; "deg"; "deg"; "deg"; "deg"];
@@ -179,6 +181,7 @@ Tr_0 = 60*60*24;
 x_rv = zeros(6, 345, Tr_0/t_step + 1);
 x_rv(:,:,1) = Debris_rv;
 for i = 1:345
+    i
     E_0 = Debris_oe(:,i);
     for t = 1:t_step:Tr_0
         E_t = OE_scl_ptb(E_0, t)';
@@ -192,7 +195,7 @@ save(fullfile(projectRoot,'data','x_rv.mat'), 'x_rv');
 load(fullfile(projectRoot,'data','x_rv.mat'), 'x_rv');
 
 %% 网格搜索，先粗后细
-step = [10*1000 0.001 0.01*d2r 0.01*d2r 1*d2r 1*d2r]'; % 粗搜索间隔，单位为m和弧度
+step = [10*1000 0.001 0.01*d2r 0.1*d2r 60*d2r 60*d2r]'; % 粗搜索间隔，单位为m和弧度
 range = [7000*1000 7450*1000
          0.01 0.04
          98*d2r 98.18*d2r
@@ -204,9 +207,12 @@ target_min = 4;
 target_num = 8;
 num = zeros(6,1);
 for i=1:1:6
-    num(i,1) = (range(i,2)-range(i,1)/step(i))
+    num(i,1) = round((range(i,2)-range(i,1))/step(i)) + 1;
 end
+oe = zeros(6,num(1,1)*num(2,1)*num(3,1)*num(4,1)*num(5,1)*num(6,1));
+for i=1:1:6
 
+end
 
 
 %% 
