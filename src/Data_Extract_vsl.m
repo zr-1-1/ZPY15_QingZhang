@@ -30,10 +30,11 @@ for i = 1:345
     paramstr = sprintf('*/Satellite/Debris%d "14 Nov 2030 08:00:00.000"', i);
     Debris_d = atkConnect(conID, 'Position', paramstr);
     Debris_rv = str2double(split(Debris_d));
-    Debris_oe(i,:) = rv2coe(Debris_rv(1:3),Debris_rv(4:6));
+    Debris_oe(i,:) = rv2coe(Debris_rv(1:3),Debris_rv(4:6), mu);
 end
 % 关闭atk连接C
 atkClose(conID);
+save('result.mat', "Debris_oe", "mu", "w_E", "R_E_m", "J_2");
 
 %% 参数可视化
 titletext = ["a", "e", "i", "Omega", "omega", "M"];

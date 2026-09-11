@@ -1,12 +1,10 @@
 function [orbital_elements] = rv2coe(r, v, mu)
 % 将位置和速度矢量转换为轨道根数
-    % 导入全局变量，保持参数一致性
-    global J_2 R_E R_E_m w_E mu
 
-    % 这里没有nargin这个变量吧？为什么要写这个？
-    % if nargin < 3
-    %     mu = 398600.4418;      % 缺省使用地球引力常数
-    % end
+    % 如果没有传入mu，使用默认值
+    if nargin < 3
+        mu = 3.986004418e14;      % 缺省使用地球引力常数 (m^3/s^2)
+    end
 
     % 强制转为列向量
     r = r(:); v = v(:);

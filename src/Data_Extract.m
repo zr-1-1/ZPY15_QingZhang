@@ -34,22 +34,3 @@ for i = 1:345
 end
 % 关闭atk连接C
 atkClose(conID);
-
-%% 按照一定步长生成24小时内碎片每个时刻的轨道根数
-t_step = 1; % 步长，单位：秒
-outercell = cell(1,345);
-for i = 1:345
-    innercell = cell(1,20000);
-    E_0 = Debris_oe(i, :);
-    idx = 0;
-
-    for t = 0: t_step: 60*60*24
-        E_t = OE_scl_ptb(E_0, t);
-        idx = idx+1;
-        innercell{idx} = E_t;
-    end
-    D_E_i = cat(2,innercell{:});
-    outercell{i} = D_E_i;
-end
-D_Eall = cat(3,outercell{:});
-
