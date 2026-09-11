@@ -1,1 +1,2 @@
+result.mat filter=lfs diff=lfs merge=lfs -text
 src/result.mat filter=lfs diff=lfs merge=lfs -text
