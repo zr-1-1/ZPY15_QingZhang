@@ -104,39 +104,47 @@ for restart = 1:n_restarts
     for iter = 1:max_iter
         p_local = 0.4 + 0.3 * (iter / max_iter);   % 自适应
 
-        if rand() < p_local
+    if rand() < p_local
             % ============ 局部优化：随机换一个段，等优即接受 ============
-            i = randi(pop_size);
-            sol = population{i};
-            obj = pop_obj(i);
+            i = randi(pop_size);            % 随机选一个个体
+            sol = population{i};            % 把这个解放进 sol
+            obj = pop_obj(i);               % 记下它当前的分数
 
-            k = randi(n_sc);
-            w = randi(n_win);
-            nprim = numel(orbit_base{w});
-            cands = setdiff(1:nprim, sol(:,w));
-            if ~isempty(cands)
-                sol(k,w) = cands(randi(numel(cands)));
-                new_obj  = obj_fun(sol);
-                if new_obj >= obj                    % 等优接受
-                    population{i} = sol;
-                    pop_obj(i)    = new_obj;
-                end
-            end
+            k = randi(n_sc);                % 随机选一个航天器 (1/2/3)
+            w = randi(n_win);               % 随机选一个窗口   (1/2/3/4)
+
+            nprim = numel(orbit_base{w});   % 看这个窗口总共有几个基元
+            cands = setdiff(1:nprim, sol(:,w));   %  找出这个窗口"还没被用"的基元
+
+        if ~isempty(cands)              % 如果还有没用过的
+        sol(k,w) = cands(randi(numel(cands)));   % 随机换一个
+        new_obj  = obj_fun(sol);                 % 算新分数
+        if new_obj >= obj                        % 新分 >= 旧分？
+        population{i} = sol;                 % 是 → 接受
+        pop_obj(i)    = new_obj;
+        end                                      % 否 → 什么都不做（自动丢弃）
+    end
         else
             % ============ 全局优化：窗口级交叉 ============
-            i1 = randi(pop_size);
+            i1 = randi(pop_size);                  %  选第一个父代
+            i2 = randi(pop_size);                  %  选第二个父代
+        while i2 == i1                         % 确保它们不同
             i2 = randi(pop_size);
-            while i2 == i1, i2 = randi(pop_size); end
-
-            [c1, c2] = crossover_window(population{i1}, population{i2}, n_win);
-            o1 = obj_fun(c1);
-            o2 = obj_fun(c2);
-
-            [~, wi] = min(pop_obj);
-            if o1 > pop_obj(wi), population{wi}=c1; pop_obj(wi)=o1; end
-            [~, wi] = min(pop_obj);
-            if o2 > pop_obj(wi), population{wi}=c2; pop_obj(wi)=o2; end
         end
+
+    [c1, c2] = crossover_window(...);      % 交叉，生成两个子代
+    o1 = obj_fun(c1);                      % 算子代1的分数
+    o2 = obj_fun(c2);                      % 算子代2的分数
+
+    [~, wi] = min(pop_obj);                % 找当前种群最差的个体
+    if o1 > pop_obj(wi)                    % 子代1比最差的强？
+    population{wi}=c1; pop_obj(wi)=o1; % 替换掉最差的
+    end
+
+    [~, wi] = min(pop_obj);                % 再找当前最差的
+    if o2 > pop_obj(wi)                    % 子代2比最差的强？
+    population{wi}=c2; pop_obj(wi)=o2; % ⑫ 替换掉
+    end
 
         % ---------- 收敛判据 ----------
         cur_best = max(pop_obj);
@@ -262,11 +270,12 @@ end
 
 % ---------- 窗口级交叉：整列交换 ----------
 function [c1, c2] = crossover_window(p1, p2, n_win)
-    c1 = p1; c2 = p2;
+    c1 = p1;                           % 子代1先复制父代1
+    c2 = p2;                           % 子代2先复制父代2
     if n_win > 1
-        cut = randi(n_win - 1);
-        c1(:, cut+1:end) = p2(:, cut+1:end);
-        c2(:, cut+1:end) = p1(:, cut+1:end);
+        cut = randi(n_win - 1);        % 随机选切点（1、2 或 3）
+        c1(:, cut+1:end) = p2(:, cut+1:end);  % 子代1的后半段来自父代2
+        c2(:, cut+1:end) = p1(:, cut+1:end);  % 子代2的后半段来自父代1
     end
 end
 
