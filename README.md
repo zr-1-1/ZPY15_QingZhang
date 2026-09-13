@@ -1,78 +1,17 @@
 # ZPY15_QingZhang
 第十五届全国大学生周培源力学竞赛团体赛试题方案---清障小东风队针对清华方案的复现
-
-# 当前仓库结构
-```text
-ZPY15_QingZhang/
-├── ZPY15.xml                         # ATK 仿真场景文件
-├── EGM96.grv                         # 重力场系数文件 EGM96，见赛题说明，位于"ATK-ZPY15专用版\AstroData\Earth\EGM96.grv"
-├── docs/                             # 文档目录
-└── src/
-    ├── Data_Extract.m                # 碎片轨道数据提取与计算脚本
-    ├── OE_scl_ptb.m                  # J2 摄动下的轨道根数计算
-    ├── orb_elements2rv.m             # 轨道根数转位置、速度矢量
-    ├── rv2coe.m                      # 位置、速度矢量转轨道根数
-    └── atk_connect_matlab_dependence/ # MATLAB 与 ATK 连接所需依赖
-```
-`src`存放脚本，`docs`存放文档
+杨子军上传的代码
 
 # 注意事项
 1. 修改代码请先拉取远程仓库最新代码，避免冲突
 2. .gitignore 文件用于忽略不需要上传的文件，如有需要请自行加入你不想上传的文件
 3. 所有有单位变量注意单位，最好统一采用国际单位制，采用弧度制
 
-# 常用命令
-```bash
-git clone <仓库地址>	    # 克隆一个远程仓库到本地，当前项目使用： git clone https://github.com/zr-1-1/ZPY15_QingZhang.git
-git status	                # 查看工作区状态
-# 同步上传相关命令
-git add <文件名>	        # 将指定文件添加到暂存区
-git add .	                # 添加当前目录下所有变更（新增、修改）到暂存区
-git commit -m "提交说明"	# 将暂存区内容提交到本地仓库
-git push origin main        # 将本地main分支推送到远程仓库 main 分支
-git push <远程名> <分支名>	 # 将本地分支推送到远程仓库，远程名一般为origin
-git push -u origin <分支名>	# 首次推送并建立本地分支与远程分支的关联
-git pull <远程名> <分支名>	 # 拉取远程更新并自动合并到当前分支，远程名一般为origin，git pull 等同于 git fetch + git merge
-git fetch <远程名>	        # 获取远程更新，但不自动合并，需手动检查
-
-# 分支相关命令
-git branch	                # 列出所有本地分支（当前分支前有 * 标记）
-git branch -a               # 查看本地和远程所有分支
-git branch <分支名>	        # 创建一个新分支
-git checkout <分支名>	    # 切换到指定分支
-git switch <分支名>	        # 切换到指定分支（一样，更推荐）
-git merge <分支名>	        # 将指定分支合并到当前分支
-git branch -d <分支名>	    # 删除已合并的本地分支
-git branch -D <分支名>	    # 强制删除分支（即使未合并）
-git push origin --delete <分支名>  # 删除远程分支
-```
-同步更新本地仓库可用（pull后的可省略）：
-```bash
-git fetch origin
-git log origin/<分支名>
-git merge <分支名>
-```
-或者
-```bash
-git pull origin <分支名>    # 拉取远程更新并自动合并到当前分支，远程名一般为origin，git pull 等同于 git fetch + git merge
-```
-一般上传可以用VScode的UI进行，也可以（注意替换提交说明和分支名）：
-```bash
-git add .
-git commit -m "提交说明"
-git push origin <分支名>
-```
-新建分支和切换如下，一般不用合并分支：
-```bash
-git branch <分支名>	        # 创建一个新分支
-git checkout <分支名>	    # 切换到指定分支
-git switch <分支名>         # 切换到指定分支（一样，更推荐）
-```
-
-# 修改日志
-`main`
+# 说明
 ```text
-09.07 在Data_Extract_vsl中修正无法连接ATK问题，删除轨道根数递推并加入参数可视化用于确定遍历范围
-      连不上ATK原因：添加子文件夹的文件路径出错，第一句多了"src"和genpath，第二句多src和fullfile。
-
+  第一部分代码和第二部分混在一起
+  第一部分：主要是Data_Extract_vsl,用于从ATK想定文件里提取碎片初始轨道数据并用直方图可视化统计结果。还有若干函数
+  运行时需要打开ATK并加载ZPY_15.html
+  第二部分：Gen_Orbit_Fragment计算24小时内碎片的位置和速度，run_all_windows是计算四个时间窗轨道基元的初筛代码，分粗筛和精筛两步（核心函数search_window.m）；refine_all_windows是用初筛的优质轨道元做种子加密M的网格，进一步精筛（核心函数refine_window.m）；命名带test的代码是测验代码。
+  
 ```
