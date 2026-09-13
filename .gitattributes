@@ -1,2 +1,8 @@
 result.mat filter=lfs diff=lfs merge=lfs -text
 src/result.mat filter=lfs diff=lfs merge=lfs -text
+src/src/refined_all.mat filter=lfs diff=lfs merge=lfs -text
+src/all_segments.mat filter=lfs diff=lfs merge=lfs -text
+src/result_24h.mat filter=lfs diff=lfs merge=lfs -text
+src/refined_segments.mat filter=lfs diff=lfs merge=lfs -text
+src/segments_nopulse.mat filter=lfs diff=lfs merge=lfs -text
+src/refined_all.mat filter=lfs diff=lfs merge=lfs -text

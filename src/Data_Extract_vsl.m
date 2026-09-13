@@ -34,7 +34,7 @@ for i = 1:345
 end
 % 关闭atk连接C
 atkClose(conID);
-save('result.mat', "Debris_oe", "mu", "w_E", "R_E_m", "J_2");
+save('Debris_oe.mat', "Debris_oe", "mu", "w_E", "R_E_m", "J_2");
 
 %% 参数可视化
 titletext = ["a", "e", "i", "Omega", "omega", "M"];
