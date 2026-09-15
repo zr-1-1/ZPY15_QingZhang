@@ -249033,7 +249033,7 @@
 <Vel X="4983.273843669054" Y="10565.01585515477" Z="16455.21607864883"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-16711936</UiColor>
@@ -249067,7 +249067,7 @@
 <ShooterControl Name="DragArea" Attribute="InitialState.DragArea" Description="-Shooter control-" Active="0" Nominal="20" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="12"/>
 <ShooterControl Name="Cr" Attribute="InitialState.Cr" Description="-Shooter control-" Active="0" Nominal="1" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="0"/>
 <ShooterControl Name="Cd" Attribute="InitialState.Cd" Description="-Shooter control-" Active="0" Nominal="2.2" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="0"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-16711936</UiColor>
@@ -249105,7 +249105,7 @@
 <Vel X="-1914.965285268078" Y="-7203.244413831966" Z="-880.0827927455266"/>
 <SpacecraftParameter DryMass="500" FuelMass="500" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -249352,7 +249352,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -249551,7 +249551,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="3707.080660686" Y="11512.662154143" Z="5649.602538912"/>
+<Burn X="3707.6906264402801" Y="11512.7196063682" Z="5648.6850863625996" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î1" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -249570,7 +249570,7 @@
 <Vel X="-1353.141832629152" Y="-1613.439209395891" Z="-6422.895292013348"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -249817,7 +249817,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -250016,7 +250016,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="1562.319255639" Y="-1535.80942528" Z="13341.272411613"/>
+<Burn X="1562.3563364051799" Y="-1535.5192253386101" Z="13341.1239680253" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î2" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -250035,7 +250035,7 @@
 <Vel X="-1296.793121112403" Y="-1025.699587613383" Z="-7141.752421497195"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -250282,7 +250282,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -250481,7 +250481,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="1538.289058067" Y="-1704.815263457" Z="13506.764584399"/>
+<Burn X="1538.3768498520001" Y="-1703.8550908145601" Z="13506.699873019101" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î3" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -250500,7 +250500,7 @@
 <Vel X="913.348066217224" Y="5052.491163411151" Z="-2411.045015073279"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -250747,7 +250747,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -250946,7 +250946,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="-2305.765310241" Y="-12704.539470137" Z="5864.996130357"/>
+<Burn X="-2306.0994430835899" Y="-12704.203430727201" Z="5865.2585895924803" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î4" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -250965,7 +250965,7 @@
 <Vel X="677.2069315779565" Y="2890.939936594125" Z="-261.096421056718"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -251212,7 +251212,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -251411,7 +251411,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="3145.204549163" Y="11264.186283384" Z="2758.52965306"/>
+<Burn X="3145.5874955074901" Y="11264.0117856787" Z="2757.4527558947102" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î5" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -251430,7 +251430,7 @@
 <Vel X="4025.740756589433" Y="13552.76934886192" Z="4868.401504147469"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -251677,7 +251677,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -251876,7 +251876,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="1208.631267738" Y="-2085.513214995" Z="11801.717938168"/>
+<Burn X="1208.80328458998" Y="-2085.1361147201001" Z="11801.4404498287" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î6" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -251895,7 +251895,7 @@
 <Vel X="4983.273843669054" Y="10565.01585515477" Z="16455.21607864883"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -252737,7 +252737,7 @@
 <Vel X="3407.904745368451" Y="-1804.17030736974" Z="26464.17803683069"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-16711936</UiColor>
@@ -252771,7 +252771,7 @@
 <ShooterControl Name="DragArea" Attribute="InitialState.DragArea" Description="-Shooter control-" Active="0" Nominal="20" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="12"/>
 <ShooterControl Name="Cr" Attribute="InitialState.Cr" Description="-Shooter control-" Active="0" Nominal="1" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="0"/>
 <ShooterControl Name="Cd" Attribute="InitialState.Cd" Description="-Shooter control-" Active="0" Nominal="2.2" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="0"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-16711936</UiColor>
@@ -252809,7 +252809,7 @@
 <Vel X="-1098.650614184598" Y="-72.58604385935362" Z="-7273.922457784091"/>
 <SpacecraftParameter DryMass="500" FuelMass="500" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -253056,7 +253056,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -253255,7 +253255,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="-296.595821473" Y="-5757.695770885" Z="7769.437365074"/>
+<Burn X="-296.59217931508601" Y="-5757.5086381007904" Z="7769.4517322096499" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î1" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -253274,7 +253274,7 @@
 <Vel X="1370.509759175772" Y="5671.680640177753" Z="-305.9337213271722"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -253521,7 +253521,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -253720,7 +253720,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="-2558.247350567" Y="-6243.965657344" Z="-6847.494999929"/>
+<Burn X="-2558.5869336762598" Y="-6243.8764708700501" Z="-6847.3416994880899" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î2" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -253739,7 +253739,7 @@
 <Vel X="768.5870355891476" Y="5659.849137685327" Z="-4397.132504388522"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -253986,7 +253986,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -254185,7 +254185,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="-2379.950053179" Y="-9988.235092863" Z="705.7941708880001"/>
+<Burn X="-2380.3526276822799" Y="-9988.0290978957401" Z="706.00709696598597" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î3" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -254204,7 +254204,7 @@
 <Vel X="1406.734978347977" Y="3289.650132064602" Z="4039.30667984875"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -254451,7 +254451,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -254650,7 +254650,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="-1335.846290784" Y="616.955948699" Z="-10214.966523995"/>
+<Burn X="-1336.0585888870701" Y="616.9478146102" Z="-10214.8649496692" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î4" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -254669,7 +254669,7 @@
 <Vel X="1754.423426458366" Y="5391.546587042824" Z="2936.778781538944"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -254916,7 +254916,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -255115,7 +255115,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="3077.224792288" Y="5318.315947112" Z="12238.879244267"/>
+<Burn X="3077.5308213206399" Y="5319.0427066680204" Z="12238.3410305172" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î5" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -255134,7 +255134,7 @@
 <Vel X="3889.110313328069" Y="6736.557598761625" Z="15403.7641240034"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -255381,7 +255381,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -255580,7 +255580,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="-413.45907545" Y="-8445.972350223999" Z="11366.516332972"/>
+<Burn X="-413.62461063401298" Y="-8445.5942914418301" Z="11366.5993555397" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î6" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -255599,7 +255599,7 @@
 <Vel X="3407.904745368451" Y="-1804.17030736974" Z="26464.17803683069"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -256441,7 +256441,7 @@
 <Vel X="-1473.54248986617" Y="-4598.585965043192" Z="-2418.336532976419"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-16711936</UiColor>
@@ -256475,7 +256475,7 @@
 <ShooterControl Name="DragArea" Attribute="InitialState.DragArea" Description="-Shooter control-" Active="0" Nominal="20" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="12"/>
 <ShooterControl Name="Cr" Attribute="InitialState.Cr" Description="-Shooter control-" Active="0" Nominal="1" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="0"/>
 <ShooterControl Name="Cd" Attribute="InitialState.Cd" Description="-Shooter control-" Active="0" Nominal="2.2" Pert="0.1" MaxStep="100" Tolerance="1" Scale="1" ScaleMethod="0" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="0" DistributionType="0" Unit="0"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-16711936</UiColor>
@@ -256513,7 +256513,7 @@
 <Vel X="-529.9583456815668" Y="-5239.444446441984" Z="5532.055525401927"/>
 <SpacecraftParameter DryMass="500" FuelMass="500" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -256760,7 +256760,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -256959,7 +256959,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="1685.620218621" Y="11600.273347061" Z="-8690.533020821"/>
+<Burn X="1686.1176200667501" Y="11599.707328213201" Z="-8691.0342748018393" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î1" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -256978,7 +256978,7 @@
 <Vel X="-1782.559921947325" Y="-6695.667068141267" Z="-516.6223061403862"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -257225,7 +257225,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -257424,7 +257424,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="3849.237171637" Y="13020.956095879" Z="3726.702651784"/>
+<Burn X="3849.5681268888402" Y="13020.8516930185" Z="3726.4812702772902" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î2" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -257443,7 +257443,7 @@
 <Vel X="-1917.766495405252" Y="-7221.987095559809" Z="-835.2703338254944"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -257690,7 +257690,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -257889,7 +257889,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="3743.146951259" Y="11827.504332399" Z="5565.97473292"/>
+<Burn X="3743.6809163651801" Y="11827.4653870408" Z="5565.4453733985702" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î3" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -257908,7 +257908,7 @@
 <Vel X="-1096.63233102094" Y="-979.5570312742936" Z="-5877.780978831041"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -258155,7 +258155,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -258354,7 +258354,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="1876.052742614" Y="-464.356901783" Z="13689.791933829"/>
+<Burn X="1876.05315019614" Y="-464.22452265373602" Z="13689.720843514" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î4" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -258373,7 +258373,7 @@
 <Vel X="2174.443019825773" Y="4562.062494850161" Z="7236.513017667926"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -258620,7 +258620,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -258819,7 +258819,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="-204.838991818" Y="-958.718728739" Z="200.07414356"/>
+<Burn X="-205.43001288631299" Y="-958.32867407342496" Z="200.16147638834201" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î5" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -258838,7 +258838,7 @@
 <Vel X="-1585.764294948792" Y="-5638.911466094236" Z="-1375.647860817436"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -259085,7 +259085,7 @@
 <ShooterControl Name="FiniteZ" Attribute="Burn.Cartesian.Z" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="5"/>
 <ShooterControl Name="FiniteAzimuth" Attribute="Burn.Spherical.Azimuth" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
 <ShooterControl Name="FiniteElevation" Attribute="Burn.Spherical.Elevation" Description="-Shooter control-" Active="0" Nominal="0" Pert="0.1" MaxStep="0.1" Tolerance="0.001" Scale="1" ScaleMethod="1" Correction="0" LowerBound="-1.1e+20" UpperBound="1.1e+20" GaussMeanorUniformLB="0" GaussdeviationorUniformUB="1" DistributionType="0" Unit="4"/>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>
@@ -259284,7 +259284,7 @@
 <OceanTideMinAmp>0.000000</OceanTideMinAmp>
 </ThirdBodyGrav>
 <OrbBurn BurnType="0" BurnCoordSys="1" BurnCoordAxes="J2000" BurnCoordType="0"/>
-<Burn X="100.293579232" Y="730.957842895" Z="-530.991059593"/>
+<Burn X="99.390353627690502" Y="730.97358829930101" Z="-530.75141159180498" />
 <EngineModel Thrust="100" Isp="3000" IsUpdateMass="1"/>
 </Segment>
 <Segment Name="Ô¤±¨¶Î6" Description="Propagates until stopping conditions are met" ComponentType="CMCSPropagate">
@@ -259303,7 +259303,7 @@
 <Vel X="-1473.54248986617" Y="-4598.585965043192" Z="-2418.336532976419"/>
 <SpacecraftParameter DryMass="500" FuelMass="0" SRPArea="20" DragArea="20" Cr="1" Cd="2.2"/>
 </FinalState>
-<LastRunCode>0</LastRunCode>
+<LastRunCode>-1</LastRunCode>
 <IsFinalStateToNext>1</IsFinalStateToNext>
 <IsBackward>0</IsBackward>
 <UiColor>-1</UiColor>

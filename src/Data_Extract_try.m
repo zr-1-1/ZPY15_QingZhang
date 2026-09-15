@@ -194,29 +194,8 @@ save(fullfile(projectRoot,'data','x_rv.mat'), 'x_rv');
 %% 
 load(fullfile(projectRoot,'data','x_rv.mat'), 'x_rv');
 
-%% 网格搜索，先粗后细
-step = [10*1000 0.001 0.01*d2r 0.1*d2r 60*d2r 60*d2r]'; % 粗搜索间隔，单位为m和弧度
-range = [7000*1000 7450*1000
-         0.01 0.04
-         98*d2r 98.18*d2r
-         73*d2r 78*d2r
-         345*d2r 445*d2r
-         0 360*d2r
-];
-target_min = 4;
-target_num = 8;
-num = zeros(6,1);
-for i=1:1:6
-    num(i,1) = round((range(i,2)-range(i,1))/step(i)) + 1;
-end
-oe = zeros(6,num(1,1)*num(2,1)*num(3,1)*num(4,1)*num(5,1)*num(6,1));
-time = (0 : ts : Tr)';  % 仿真时间向量，包含 t = 0 到 t = Tr，共 n+1 个点
-a = (range(1,1):step(1):range(1,2));
-e = (range(2,1):step(2):range(2,2));
-i_r = (range(3,1):step(3):range(3,2));
-Omega = (range(4,1):step(4):range(4,2));
-w = (range(5,1):step(5):range(5,2));
-M = (range(6,1):step(6):range(6,2));
+%% Coarse-to-fine grid search (see docs and standalone entry)
+run(fullfile(fileparts(mfilename('fullpath')),'run_debris_grid_search.m'));
 
 
 %% 

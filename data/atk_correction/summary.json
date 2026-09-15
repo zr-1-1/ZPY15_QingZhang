@@ -1,0 +1,51 @@
+{
+  "NativeATKVerified": false,
+  "Score": 112,
+  "EligiblePerShip": [
+    38,
+    33,
+    41
+  ],
+  "MinimumAltitudes_m": [
+    653093.11566017848,
+    662338.768244789,
+    644817.45147187077
+  ],
+  "MaxIndependentAltitudeDifference_m": 13.947393110953271,
+  "MaxOriginalATKTrajectoryPositionDifference_m": [
+    26.229881486006658,
+    31.278385323008262,
+    316.47481697804631
+  ],
+  "CalibrationPolePolynomial": [
+    [
+      0.0030273794303766447,
+      4.0425706049883753E-7,
+      -1.8381480479471263E-8
+    ],
+    [
+      -2.8034052840117067E-5,
+      -5.4209888000771082E-8,
+      3.39718092122032E-8
+    ]
+  ],
+  "OriginalATKClearanceSetsReproduced": true,
+  "RoundingSensitivity": [
+    {
+      "PulseDecimalPlaces": 9,
+      "Score": 112,
+      "Valid": 1,
+      "Mother1Min_m": 653093.11566190422,
+      "Mother2Min_m": 662338.768244789,
+      "Mother3Min_m": 644817.45129736606
+    },
+    {
+      "PulseDecimalPlaces": 6,
+      "Score": 108,
+      "Valid": 1,
+      "Mother1Min_m": 653093.10971222166,
+      "Mother2Min_m": 662338.768244789,
+      "Mother3Min_m": 644816.882372004
+    }
+  ]
+}
